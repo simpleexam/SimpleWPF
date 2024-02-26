@@ -1,0 +1,65 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Главное окно" Height="450" Width="800"
+        MinHeight="200" MinWidth="300">
+    <Grid ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Menu Name="mainMenu" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
+            <MenuItem Header="menu1">
+                <MenuItem Header="item1"/>
+                <MenuItem Header="item2"/>
+                <MenuItem Header="item3"/>
+            </MenuItem>
+            <MenuItem Header="menu2">
+                <MenuItem Header="item1"/>
+                <MenuItem Header="item2"/>
+                <MenuItem Header="item3"/>
+            </MenuItem>
+
+        </Menu>
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="10">
+            <TextBlock Text="параметры треугольника:" Margin="10"/>
+            <StackPanel Orientation="Horizontal" MinWidth="250" Margin="5">
+                <TextBlock Text="a:" Margin="0,0,10,0"/>
+                <TextBox Name="inputATextBox"  MinWidth="200"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" MinWidth="250" Margin="5">
+                <TextBlock Text="b:" Margin="0,0,10,0"/>
+                <TextBox Name="inputBTextBox"  MinWidth="200"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" MinWidth="250" Margin="5">
+                <TextBlock Text="c:" Margin="0,0,10,0"/>
+                <TextBox Name="inputCTextBox"  MinWidth="200"/>
+            </StackPanel>
+
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Image Source="images/triangle.jpg" Visibility="Visible"/>
+            <Button Content="Рассчитать площадь" Click="Button_Click" 
+                    HorizontalAlignment="Center"
+                    Background="LightSkyBlue"/>
+            <Button Content="открыть окно" Name="openWindowButton" 
+                    Click="openWindowButton_Click"
+                    HorizontalAlignment="Center"
+                    Margin="10"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="2">
+            <Label Name="outputLabel"  HorizontalAlignment="Center" Content="площадь треугольника: "/>
+        </StackPanel>
+       
+       
+    </Grid>
+</Window>
